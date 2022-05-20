@@ -84,10 +84,6 @@ Production.init(
       type: DataTypes.INTEGER,
       default: 0,
     },
-    lost_schedule_cuts: {
-      type: DataTypes.INTEGER,
-      default: 0,
-    },
     oee_mins: {
       type: DataTypes.INTEGER,
       default: 0,
@@ -97,7 +93,7 @@ Production.init(
       default: 0,
     },
     uptime: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       default: 0,
     },
     grabs: {
@@ -117,6 +113,10 @@ Production.init(
     },
   },
   {
+    hooks: {
+      beforeCreate: async (data) => {},
+      beforeUpdate: (data) => {},
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

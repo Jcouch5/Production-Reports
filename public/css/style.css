@@ -1,0 +1,26 @@
+ul {
+  list-style: none;
+  color: black;
+  font-size: 24px;
+}
+header {
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+nav {
+  text-align: end;
+  font-size: 32px;
+}
+.black {
+  color: black;
+  text-decoration: none;
+}
+.white {
+  color: white;
+  text-decoration: none;
+  margin-right: 1em;
+}
+.title {
+  margin-top: 0.5em;
+}

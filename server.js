@@ -3,7 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const hbs = exphbs.create({});
+const helpers = require('./util/helpers');
+const hbs = exphbs.create({ helpers });
 const models = require('./models');
 
 const sequelize = require('./config/connection');
