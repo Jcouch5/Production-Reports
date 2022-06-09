@@ -1,0 +1,3 @@
+/* Date picker by ID
+Then fetch request to get the daily report data for specified date
+*/

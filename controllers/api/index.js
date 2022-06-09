@@ -6,6 +6,7 @@ const weeklyReports = require('./weekly-report');
 const monthlyReports = require('./monthly-report.js');
 const User = require('./user');
 
+// directs to the correct file when each url is visited
 router.use('/report', dailyReports);
 router.use('/summary', dailySummary);
 router.use('/weekly', weeklyReports);
