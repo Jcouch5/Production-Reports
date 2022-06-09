@@ -1,0 +1,63 @@
+<div>
+  <h2>
+    Date:
+    {{format_date lines.0.date}}
+  </h2>
+  <div class='row'>
+    {{#each lines}}
+      <article class='card col-6 mx-auto'>
+        <div class='card-header flex-row justify-space-between'>
+          <h2 class='d-inline mr-2'>
+            {{shift}}
+            Shift Line:
+            {{line}}
+          </h2>
+          <h2 class='d-inline ml-2'>{{product}}</h2>
+
+        </div>
+        <div class='card-body'>
+          <p>
+            Cases:
+            {{net_cases}}</p>
+          <p>
+            Total Cuts:
+            {{total_cuts}}</p>
+          <p>
+            HMI Waste:
+            {{hmi_waste}}
+          </p>
+          <p>
+            Packaging Waste:
+            {{packaging_waste_cuts}}
+          </p>
+          <p>
+            Uptime:
+            {{uptime}}
+          </p>
+          <p>
+            Average Speed:
+            {{calculate_average_speed total_cuts uptime}}
+          </p>
+          <p>
+            % Uptime:
+            {{calculate_uptime oee_mins}}
+          </p>
+          <p>
+            % Speed:
+            {{calculate_speed max_speed}}
+          </p>
+          <p>
+            Quality:
+            {{calculate_quality total_waste}}
+          </p>
+          <p>
+            OEE:
+            {{calculate_oee}}
+          </p>
+        </div>
+        <div>
+        </div>
+      </article>
+    {{/each}}
+  </div>
+</div>

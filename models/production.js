@@ -13,7 +13,7 @@ Production.init(
       autoIncrement: true,
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       default: DataTypes.NOW,
     },
     line: {
@@ -65,7 +65,7 @@ Production.init(
       default: 0,
     },
     total_waste: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.FLOAT,
       default: 0.0,
     },
     scheduled_hours: {
@@ -93,7 +93,7 @@ Production.init(
       default: 0,
     },
     uptime: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DOUBLE,
       default: 0,
     },
     grabs: {

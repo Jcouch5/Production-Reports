@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Production, User } = require('../models');
 const helper = require('../util/helpers');
-const yesterday = helper.format_date(
+const yesterday = helper.format_date2(
   new Date(new Date().setDate(new Date().getDate() - 1))
 );
 
@@ -39,22 +39,23 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/daily-report', async (req, res) => {
+router.get('/daily-summary', async (req, res) => {
   try {
-    res.render('daily-report');
+    res.render('daily-summary');
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/daily-summary', async (req, res) => {
+router.get('/daily-report', async (req, res) => {
   try {
     console.log(yesterday);
     const reportData = await Production.findAll({
       where: { date: yesterday },
     });
     const lines = reportData.map((line) => line.get({ plain: true }));
-    res.render('daily-summary', { lines });
+    console.log(lines);
+    res.render('daily-report', { lines });
   } catch (err) {
     console.log('hello');
     res.status(500).json(err);
