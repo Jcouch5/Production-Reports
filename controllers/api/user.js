@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-
+    console.log(newUser);
     req.session.save(() => {
       req.session.userId = newUser.id;
       req.session.username = newUser.username;
@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
       res.json(newUser);
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -54,7 +55,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// logs a user
+// logs a user out
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

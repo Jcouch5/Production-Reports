@@ -15,12 +15,11 @@
   <body class='container'>
     <header>
       <h1 class='title'>Production Data</h1>
-      <nav class='text-right nav'>
+      <nav class='nav justify-content-end'>
         <a href='/' class='white'>Home</a>
-        <a href='/reports' class='white'>Reports</a>
-        {{! <a href='/input' class='white'>Input</a> }}
         {{#if logged_in}}
           <a href='/logout' class='white'>Logout</a>
+          <a href='/new-data' class='white'>New Data</a>
         {{else}}
           <a href='/login' class='white'>Login</a>
         {{/if}}

@@ -7,10 +7,10 @@ const monthlyReports = require('./monthly-report.js');
 const User = require('./user');
 
 // directs to the correct file when each url is visited
-router.use('/report', dailyReports);
-router.use('/summary', dailySummary);
-router.use('/weekly', weeklyReports);
-router.use('/monthly', monthlyReports);
+// router.use('/report', dailyReports);
+// router.use('/summary', dailySummary);
+// router.use('/weekly', weeklyReports);
+// router.use('/monthly', monthlyReports);
 router.use('/user', User);
 
 module.exports = router;

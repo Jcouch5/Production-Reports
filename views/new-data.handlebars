@@ -1,4 +1,15 @@
 <div>
-  Today is
+  <Form>
+    <label for='date'>Production Date</label>
+    <input type='date' name='date' id='prodDate' />
+    <label for='shift'>Shift</label>
+    <input type='text' placeholder='A' />
+    {{#each record}}
+      <Label>Line</Label>
+      <input type='number' placeholder='1' class='line' />
+      <label for=''></label>
+    {{/each}}
+    <button class='new-line btn'>New line</button>
+  </Form>
 
 </div>

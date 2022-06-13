@@ -10,15 +10,9 @@ const yesterday = helper.format_date2(
 // routes that renders the homepage
 router.get('/', async (req, res) => {
   try {
-    res.render('home');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-// renders the reports page
-router.get('/reports', (req, res) => {
-  try {
-    res.render('reports');
+    res.render('home', {
+      logged_in: req.session.loggedIn,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -79,5 +73,14 @@ router.get('/weekly-report', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+router.get('/new-data', async (req, res) => {
+  try {
+    let records = [0];
+    if (req.body.records) {
+      records.push(0);
+    }
+    res.render('new-data', { records });
+  } catch (err) {}
 });
 module.exports = router;
