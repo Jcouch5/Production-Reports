@@ -18,13 +18,18 @@
       <nav class='nav justify-content-end'>
         <a href='/' class='white'>Home</a>
         {{#if logged_in}}
-          <a href='/logout' class='white'>Logout</a>
+          <button id='logout' class='no-button'>Logout</button>
           <a href='/new-data' class='white'>New Data</a>
         {{else}}
           <a href='/login' class='white'>Login</a>
         {{/if}}
       </nav>
     </header>
-    {{{body}}}
+    <main>
+      {{{body}}}
+    </main>
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
   </body>
 </html>
