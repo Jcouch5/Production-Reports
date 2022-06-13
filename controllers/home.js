@@ -51,7 +51,7 @@ router.get('/daily-report', async (req, res) => {
       where: { date: yesterday },
     });
     const lines = reportData.map((line) => line.get({ plain: true }));
-    console.log(lines);
+    console.log(lines[0].date);
     res.render('daily-report', { lines });
   } catch (err) {
     console.log('hello');
@@ -66,7 +66,7 @@ router.get('/monthly-report', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// renders the weekly report page with the previous weeeks information
+// renders the weekly report page with the previous weeks information
 router.get('/weekly-report', async (req, res) => {
   try {
     res.render('weekly-report');

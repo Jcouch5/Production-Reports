@@ -5,6 +5,13 @@ let qualityPer = 0.0;
 
 module.exports = {
   format_date: (date) => {
+    if (typeof date === 'string') {
+      const dateArr = date.split('-');
+      const year = dateArr[0];
+      const month = dateArr[1];
+      const day = dateArr[2];
+      return `${month}/${day}/${year}`;
+    }
     return `${date.getMonth() + 1}/${date.getDate() + 1}/${date.getFullYear()}`;
   },
   format_date2: (date) => {
