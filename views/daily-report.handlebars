@@ -4,6 +4,11 @@
     {{format_date lines.0.date}}
   </h2>
   {{! Date Picker }}
+  <form action='' id='dateForm'>
+    <label for='date'>Select Date</label>
+    <input type='date' name='date' id='reportDate' />
+    <button>Sumbit</button>
+  </form>
   <div class='row'>
     {{#each lines}}
       <article class='card col-6 mx-auto'>
@@ -62,3 +67,4 @@
     {{/each}}
   </div>
 </div>
+<script src='/js/daily-report.js'></script>

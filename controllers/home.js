@@ -46,15 +46,12 @@ router.get('/daily-summary', async (req, res) => {
 // renders the daily reports page with the previous days information
 router.get('/daily-report', async (req, res) => {
   try {
-    console.log(yesterday);
     const reportData = await Production.findAll({
       where: { date: yesterday },
     });
     const lines = reportData.map((line) => line.get({ plain: true }));
-    console.log(lines[0].date);
     res.render('daily-report', { lines });
   } catch (err) {
-    console.log('hello');
     res.status(500).json(err);
   }
 });
